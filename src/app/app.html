@@ -1,0 +1,45 @@
+<!-- DIRECTIVES EXAMPLE: Conditional classes with [ngClass] -->
+<div class="app-container">
+  <nav class="navbar" [ngClass]="{'navbar-dark': true}">
+    <div class="nav-brand">
+      <h2>💰 Splitwise</h2>
+    </div>
+    
+    <ul class="nav-links">
+      <!-- ROUTING EXAMPLE: Router navigation -->
+      <li>
+        <a (click)="navigateTo('/dashboard')" 
+           [class.active]="isActiveRoute('/dashboard')">
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a (click)="navigateTo('/add-expense')" 
+           [class.active]="isActiveRoute('/add-expense')">
+          Add Expense
+        </a>
+      </li>
+      <li>
+        <a (click)="navigateTo('/history')" 
+           [class.active]="isActiveRoute('/history')">
+          History
+        </a>
+      </li>
+      <li>
+        <a (click)="navigateTo('/concepts')" 
+           [class.active]="isActiveRoute('/concepts')">
+          Angular Concepts
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <!-- ROUTING EXAMPLE: Router outlet for component rendering -->
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="footer">
+    <p>Splitwise App - Demonstrating Angular Concepts</p>
+  </footer>
+</div>

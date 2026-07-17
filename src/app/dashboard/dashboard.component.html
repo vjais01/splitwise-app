@@ -1,0 +1,56 @@
+<div class="dashboard-container">
+  <!-- DIRECTIVES EXAMPLE: *ngIf structural directive -->
+  <div class="header" *ngIf="balances.length > 0">
+    <h1>Splitwise Dashboard</h1>
+    <button class="btn btn-primary" (click)="onAddExpense()">Add Expense</button>
+  </div>
+
+  <!-- BINDINGS EXAMPLE: Property binding [class] -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Balance Summary</h3>
+        </div>
+        <div class="card-body">
+          <!-- DIRECTIVES EXAMPLE: *ngFor structural directive -->
+          <div *ngFor="let balance of balances" class="balance-item">
+            <span>{{ balance.person.name }}</span>
+            <!-- PIPES EXAMPLE: Using custom pipes in template -->
+            <span [class]="balance.balance | balanceColor">
+              {{ balance.balance | currencySymbol }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3>Recent Expenses</h3>
+        </div>
+        <div class="card-body">
+          <!-- DIRECTIVES EXAMPLE: Custom directive usage -->
+          <div *ngFor="let expense of recentExpenses" 
+               class="expense-item" 
+               appHighlight="lightgreen">
+            <strong>{{ expense.title }}</strong>
+            <span>{{ expense.totalAmount | currencySymbol }}</span>
+            <small>{{ expense.date | date:'mediumDate' }}</small>
+          </div>
+          
+          <!-- DIRECTIVES EXAMPLE: *ngIf with else -->
+          <div *ngIf="recentExpenses.length === 0; else hasExpenses" class="text-muted">
+            No expenses yet. Add your first expense!
+          </div>
+          <ng-template #hasExpenses>
+            <button class="btn btn-outline-primary mt-3" (click)="onViewHistory()">
+              View All History
+            </button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

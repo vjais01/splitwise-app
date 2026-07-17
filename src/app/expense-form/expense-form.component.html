@@ -1,0 +1,127 @@
+
+
+
+<div class="expense-form-container">
+  <div class="header">
+    <h2>Add New Expense</h2>
+    <button class="btn btn-secondary" (click)="router.navigate(['/dashboard'])">Back to Dashboard</button>
+  </div>
+
+  <!-- FORMS EXAMPLE: Template-driven form with ngModel -->
+  <form #expenseForm="ngForm" (ngSubmit)="submitExpense()" class="expense-form">
+    
+    <!-- BINDINGS EXAMPLE: Two-way data binding -->
+    <div class="form-group">
+      <label for="title">Expense Title</label>
+      <input type="text" id="title" name="title" [(ngModel)]="expense.title" 
+             required class="form-control" placeholder="Dinner, Groceries, etc.">
+    </div>
+
+    <div class="form-section">
+      <h4>Select Participants</h4>
+      <div class="participants-grid">
+        <!-- DIRECTIVES EXAMPLE: *ngFor with event binding -->
+        <div *ngFor="let person of people" class="participant-item">
+          <label>
+            <input type="checkbox" 
+                   [value]="person.id" 
+                   (change)="onPersonSelectionChange(person.id, $event)">
+            {{ person.name }}
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h4>Add Expense Items</h4>
+      
+      <div class="item-form card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <label>Description</label>
+              <input type="text" [(ngModel)]="newItem.description" 
+                     name="itemDescription" class="form-control" 
+                     placeholder="Pizza, Beer, etc.">
+            </div>
+            
+            <div class="col-md-3">
+              <label>Amount</label>
+              <input type="number" [(ngModel)]="newItem.amount" 
+                     name="itemAmount" class="form-control" 
+                     (input)="updateShares()" step="0.01" min="0">
+            </div>
+            
+            <div class="col-md-3">
+              <label>Paid By</label>
+              <!-- PIPES EXAMPLE: Using pipe in property binding -->
+              <select [(ngModel)]="newItem.paidBy" name="paidBy" class="form-control">
+                <option *ngFor="let person of people" [value]="person.id">
+                  {{ person.name }}
+                </option>
+              </select>
+            </div>
+            
+            <div class="col-md-2">
+              <label>&nbsp;</label>
+              <button type="button" class="btn btn-success btn-block" 
+                      (click)="addItem()" [disabled]="!newItem.description || newItem.amount <= 0">
+                Add Item
+              </button>
+            </div>
+          </div>
+
+          <!-- DIRECTIVES EXAMPLE: *ngIf with condition -->
+          <div *ngIf="expense.participants.length > 0 && newItem.amount > 0" class="shares-preview">
+            <h6>Shares Distribution:</h6>
+            <div *ngFor="let personId of expense.participants" class="share-item">
+              {{ getPersonName(personId) }}: {{ newItem.shares[personId] | currencySymbol }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIRECTIVES EXAMPLE: Custom directive with property binding -->
+      <div class="items-list" *ngIf="expense.items.length > 0">
+        <h5>Added Items</h5>
+        <div *ngFor="let item of expense.items; let i = index" 
+             class="item-card card" [appHighlight]="'#e8f5e8'">
+          <div class="card-body">
+            <div class="item-header">
+              <strong>{{ item.description }}</strong>
+              <span class="amount">{{ item.amount | currencySymbol }}</span>
+              <button type="button" class="btn btn-danger btn-sm" 
+                      (click)="removeItem(i)">Remove</button>
+            </div>
+            <div class="item-details">
+              <small>Paid by: {{ getPersonName(item.paidBy) }}</small>
+              <div class="shares">
+                <strong>Shares:</strong>
+                <span *ngFor="let personId of expense.participants" class="badge badge-light">
+                  {{ getPersonName(personId) }}: {{ item.shares[personId] | currencySymbol }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="total-amount card">
+          <div class="card-body">
+            <h4>Total: {{ expense.totalAmount | currencySymbol }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" 
+              [disabled]="!expense.title || expense.items.length === 0">
+        Create Expense
+      </button>
+      <button type="button" class="btn btn-outline-secondary" 
+              (click)="router.navigate(['/dashboard'])">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+ng new splitwise-app --routing=true --style=scss --skip-git=true
+cd splitwise-app
+mkdir src\app\models
+mkdir src\app\services
+mkdir src\app\directives
+mkdir src\app\pipes
+mkdir src\app\dashboard
+mkdir src\app\expense-form
+mkdir src\app\history
+mkdir src\app\concepts
+type nul > src\app\models\expense.model.ts
+type nul > src\app\services\expense.service.ts
+type nul > src\app\directives\highlight.directive.ts
+type nul > src\app\pipes\balance-color.pipe.ts
+type nul > src\app\pipes\currency-symbol.pipe.ts
+type nul > src\app\dashboard\dashboard.component.ts
+type nul > src\app\dashboard\dashboard.component.html
+type nul > src\app\dashboard\dashboard.component.scss
+
+type nul > src\app\expense-form\expense-form.component.ts
+type nul > src\app\expense-form\expense-form.component.html
+type nul > src\app\expense-form\expense-form.component.scss
+
+type nul > src\app\history\history.component.ts
+type nul > src\app\history\history.component.html
+type nul > src\app\history\history.component.scss
+
+type nul > src\app\concepts\concepts.component.ts
+type nul > src\app\concepts\concepts.component.html
+type nul > src\app\concepts\concepts.component.scss
+type nul > src\app\app.routes.ts
+type nul > src\app\app.config.ts

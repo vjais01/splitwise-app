@@ -1,0 +1,65 @@
+<div class="history-container">
+  <div class="header">
+    <h2>Expense History</h2>
+    <button class="btn btn-secondary" (click)="goBack()">Back to Dashboard</button>
+  </div>
+
+  <!-- DIRECTIVES EXAMPLE: *ngIf with template -->
+  <div *ngIf="expenses.length === 0" class="empty-state">
+    <div class="empty-state-content">
+      <h3>No Expenses Yet</h3>
+      <p>Start by adding your first expense!</p>
+      <button class="btn btn-primary" (click)="router.navigate(['/add-expense'])">
+        Add First Expense
+      </button>
+    </div>
+  </div>
+
+  <!-- DIRECTIVES EXAMPLE: *ngFor with index -->
+  <div *ngIf="expenses.length > 0" class="expenses-list">
+    <div *ngFor="let expense of expenses; let i = index" 
+         class="expense-card card" 
+         [appHighlight]="i % 2 === 0 ? '#f8f9fa' : '#ffffff'">
+      
+      <div class="card-header">
+        <div class="expense-title">
+          <h4>{{ expense.title }}</h4>
+          <span class="total-amount">{{ expense.totalAmount | currencySymbol }}</span>
+        </div>
+        <div class="expense-meta">
+          <span class="date">{{ formatDate(expense.date) }}</span>
+          <span class="created-by">By: {{ getPersonName(expense.createdBy) }}</span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="items-section">
+          <h5>Items</h5>
+          <div *ngFor="let item of expense.items" class="item-row">
+            <div class="item-info">
+              <strong>{{ item.description }}</strong>
+              <span>{{ item.amount | currencySymbol }}</span>
+            </div>
+            <div class="item-details">
+              <small>Paid by: {{ getPersonName(item.paidBy) }}</small>
+              <div class="shares">
+                <span *ngFor="let personId of expense.participants" class="share-badge">
+                  {{ getPersonName(personId) }}: {{ item.shares[personId] | currencySymbol }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="participants-section">
+          <h6>Participants:</h6>
+          <div class="participants-list">
+            <span *ngFor="let personId of expense.participants" class="participant-tag">
+              {{ getPersonName(personId) }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
