@@ -1,93 +1,116 @@
 # 💰 Splitwise Expense Tracker
 
-A modern expense-sharing web application built with **Angular 20** that helps users manage shared expenses, track balances, and view expense history. Inspired by Splitwise, this project demonstrates Angular concepts such as standalone components, routing, services, pipes, and responsive UI design.
+A responsive expense-sharing web application built with **Angular 20** that simplifies splitting expenses among friends, roommates, and family members. The application provides an intuitive interface to add shared expenses, calculate balances, and track expense history.
+
+This project demonstrates modern Angular development using standalone components, routing, services, custom pipes, modular architecture, and responsive UI design.
 
 ---
 
-## 🚀 Features
+## 🚀 Live Demo
 
-- 🏠 Dashboard with expense summary
-- 💸 Add new shared expenses
-- 📜 View complete expense history
-- 👥 Manage participants
+> Add your deployed application link here (Netlify/Vercel)
+
+**Live Demo:** https://your-live-demo-link.com
+
+---
+
+## 📌 Features
+
+- 🏠 Interactive Dashboard
+- 💸 Add and manage shared expenses
+- 👥 Manage multiple participants
 - ⚖️ Automatic balance calculation
-- 💱 Currency formatting
-- 📅 Date formatting
-- 🎨 Responsive and modern UI
-- 🔄 Angular standalone components
-- 🛠 Clean and modular project structure
+- 📜 Expense history with detailed records
+- 💱 Currency symbol formatting using custom pipes
+- 📅 Date formatting for expenses
+- 📱 Fully responsive design
+- ⚡ Fast navigation with Angular Router
+- 🎯 Clean and reusable component architecture
 
 ---
 
 ## 🛠 Tech Stack
 
-- Angular 20
-- TypeScript
-- HTML5
-- SCSS
-- Angular Router
-- Angular Pipes
-- Angular Services
+| Technology | Purpose |
+|------------|---------|
+| Angular 20 | Frontend Framework |
+| TypeScript | Application Logic |
+| HTML5 | Structure |
+| SCSS | Styling |
+| Angular Router | Navigation |
+| Angular Services | Business Logic |
+| Angular Pipes | Data Formatting |
+| Standalone Components | Modular Architecture |
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
 src/
- ├── app/
- │   ├── dashboard/
- │   ├── expense-form/
- │   ├── history/
- │   ├── models/
- │   ├── services/
- │   ├── pipes/
- │   └── directives/
- ├── assets/
- └── styles.scss
+│
+├── app/
+│   ├── dashboard/
+│   ├── expense-form/
+│   ├── history/
+│   ├── directives/
+│   ├── models/
+│   ├── pipes/
+│   ├── services/
+│   ├── app.routes.ts
+│   ├── app.config.ts
+│   └── app.ts
+│
+├── index.html
+├── main.ts
+└── styles.scss
 ```
 
 ---
 
 ## 📸 Screenshots
 
-> Add screenshots of your application here.
+### Dashboard
 
-Example:
+> Add Dashboard Screenshot
 
-- Dashboard
-- Add Expense Form
-- Expense History
+### Add Expense
+
+> Add Expense Screenshot
+
+### Expense History
+
+> Add History Screenshot
 
 ---
 
 ## ⚙️ Installation
 
-Clone the repository:
+### Clone Repository
 
 ```bash
 git clone https://github.com/vjais01/splitwise-app.git
 ```
 
-Go to the project folder:
+### Navigate to Project
 
 ```bash
 cd splitwise-app
 ```
 
-Install dependencies:
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-Run the application:
+### Run Application
 
 ```bash
 ng serve
 ```
 
-Open your browser and visit:
+Visit:
 
 ```
 http://localhost:4200
@@ -95,15 +118,31 @@ http://localhost:4200
 
 ---
 
-## 📌 Future Enhancements
+## 💡 What I Learned
 
-- User authentication
-- Backend integration (Spring Boot)
-- Database support
-- Expense categories
-- Charts and analytics
-- Export expenses to PDF/Excel
-- Dark mode
+During this project, I gained hands-on experience with:
+
+- Angular Standalone Components
+- Angular Routing
+- Component Communication
+- TypeScript
+- Services & Dependency Injection
+- Custom Pipes
+- Responsive UI Design
+- Project Structure & Code Organization
+
+---
+
+## 🔮 Future Enhancements
+
+- 🔐 User Authentication
+- ☁️ Spring Boot Backend Integration
+- 🗄️ MySQL Database
+- 📊 Expense Analytics & Charts
+- 📂 Expense Categories
+- 🌙 Dark Mode
+- 📄 Export Reports (PDF/Excel)
+- ☁️ Cloud Data Storage
 
 ---
 
@@ -111,10 +150,18 @@ http://localhost:4200
 
 **Vandana Jaiswar**
 
-- GitHub: https://github.com/vjais01
+🎓 B.Sc. Computer Science
+
+💻 Full Stack Java & Angular Developer
+
+GitHub: https://github.com/vjais01
+
+LinkedIn: *(Add your LinkedIn profile here)*
 
 ---
 
-## ⭐ Support
+## ⭐ Show Your Support
 
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+If you found this project helpful or interesting, please consider giving it a ⭐ on GitHub.
+
+It motivates me to build more projects and continuously improve my skills.
