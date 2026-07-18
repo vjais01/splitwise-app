@@ -1,59 +1,120 @@
-# SplitwiseApp
+# 💰 Splitwise Expense Tracker
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+A modern expense-sharing web application built with **Angular 20** that helps users manage shared expenses, track balances, and view expense history. Inspired by Splitwise, this project demonstrates Angular concepts such as standalone components, routing, services, pipes, and responsive UI design.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features
+
+- 🏠 Dashboard with expense summary
+- 💸 Add new shared expenses
+- 📜 View complete expense history
+- 👥 Manage participants
+- ⚖️ Automatic balance calculation
+- 💱 Currency formatting
+- 📅 Date formatting
+- 🎨 Responsive and modern UI
+- 🔄 Angular standalone components
+- 🛠 Clean and modular project structure
+
+---
+
+## 🛠 Tech Stack
+
+- Angular 20
+- TypeScript
+- HTML5
+- SCSS
+- Angular Router
+- Angular Pipes
+- Angular Services
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+ ├── app/
+ │   ├── dashboard/
+ │   ├── expense-form/
+ │   ├── history/
+ │   ├── models/
+ │   ├── services/
+ │   ├── pipes/
+ │   └── directives/
+ ├── assets/
+ └── styles.scss
+```
+
+---
+
+## 📸 Screenshots
+
+> Add screenshots of your application here.
+
+Example:
+
+- Dashboard
+- Add Expense Form
+- Expense History
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/vjais01/splitwise-app.git
+```
+
+Go to the project folder:
+
+```bash
+cd splitwise-app
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the application:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser and visit:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 📌 Future Enhancements
 
-## Building
+- User authentication
+- Backend integration (Spring Boot)
+- Database support
+- Expense categories
+- Charts and analytics
+- Export expenses to PDF/Excel
+- Dark mode
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 👩‍💻 Author
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+**Vandana Jaiswar**
 
-## Running unit tests
+- GitHub: https://github.com/vjais01
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## ⭐ Support
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+If you found this project helpful, consider giving it a ⭐ on GitHub.
