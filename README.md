@@ -156,7 +156,7 @@ During this project, I gained hands-on experience with:
 
 GitHub: https://github.com/vjais01
 
-LinkedIn: *(Add your LinkedIn profile here)*
+LinkedIn: *(https://www.linkedin.com/in/vandana-jaiswar-521a99277/)*
 
 ---
 
