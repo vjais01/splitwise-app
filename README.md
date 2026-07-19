@@ -10,7 +10,7 @@ This project demonstrates modern Angular development using standalone components
 
 > Add your deployed application link here (Netlify/Vercel)
 
-**Live Demo:** https://your-live-demo-link.com
+**Live Demo:** https://splitwise-expense-tracker.netlify.app/dashboard
 
 ---
 
